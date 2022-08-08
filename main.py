@@ -1,3 +1,4 @@
+
 #IMPORTACION:
 from scipy.io import wavfile  #importamos libreria spicy - sirve para leer archivos en formato ".wav"
 import numpy as np       # numpy nos ayudara a realizar operaciones matematicas
@@ -7,7 +8,7 @@ import matplotlib.pyplot as plt   # libreria que nos ayudara a realizar los graf
 
 #Funcion para leer el archivo. Retorna un vector recortado a los 5 segundos y la longitud de dicho vector
 def lectura(nombre):
-    numero, data1 = wavfile.read(nombre)  # la funcion "wavfile.read()" reTorna una tutla con un numero y un vector.
+    numero, data1 = wavfile.read('sounds\\'+nombre)  # la funcion "wavfile.read()" reTorna una tutla con un numero y un vector.
     # si dividimos len(data1)/numero obtenemos el tiempo de grabacion (~5.56 s), por lo que reemplazamos
     # el tiempo de grabacion por 5 y obtenemos un nuevo len(data1) que corta al vector en 5 segundos
     longitud = 5*numero         # hallamos la nueva longitud del vector
@@ -90,12 +91,8 @@ plt.xlabel("Distancia (m) ",fontsize=8,fontfamily="sans",color= 'black')   # tit
 plt.ylabel("Distancia (m) ",fontsize=8,fontfamily="sans",color= 'black')   # titulo del eje y
 
 
-plt.savefig("Mapa_de_ruido.png")  # comando para guardar el grafico en formato png en el mismo directorio de trabajo
-
-
-
-
-
+#plt.savefig("Mapa_de_ruido.png")# comando para guardar el grafico en formato png en el mismo directorio de trabajo
+plt.show()
 
 
 
